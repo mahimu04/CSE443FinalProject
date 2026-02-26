@@ -45,3 +45,110 @@ However, without participatory design or co-creation with disabled stakeholders,
 We want to avoid oversimplification by recognizing the true range accessibility needs and offering customizable interaction modes. It does not assume a single disability type or uniform solution.
 
 That said, any technology like this risks oversimplification risks oversimplification, just due to different existing models inadequacies. Improvements would require engagement with diverse disability communities to ensure accurate representations of real-world experiences.
+
+
+1. List of Tasks We Plan to Support
+Task 1: Record and Transcribe Lecture
+* User opens the application
+* Selects “Start Recording”
+* Speech is transcribed live with timestamps and speaker labels
+* User stops recording and saves the session
+
+Task 2: Review and Correct Notes
+* User opens a saved session
+* Navigates transcript by timestamps
+* Edits incorrect text
+* Highlights key information
+* Saves updated transcript
+* User selects “Generate Summary”
+* System produces structured notes including:
+    * Key Points
+    * Action Items
+    * Definitions
+* User exports notes for later use
+These tasks are informed by our research on speech recognition ambiguity, bias in ASR systems, and interactive error recovery. Instead of just showing AI output, our system allows users to actively review, correct, and structure their notes, which helps reduce ambiguity and improve accessibility.
+
+2. Validation Plan
+We will validate the project through system-based evaluation rather than user studies.
+
+Correctness Analysis
+* Use prerecorded audio samples
+* Compare transcript output to ground truth text
+* Measure:
+    * Word Error Rate (WER)
+    * Timestamp alignment accuracy
+    * Summary accuracy relative to lecture content
+
+Task Completion Validation
+* Confirm users can complete the full workflow:
+    * Record
+    * Save
+    * Edit
+    * Export
+* Ensure all tasks can be completed using keyboard-only navigation
+
+Accessibility Audit
+* Evaluate the interface using the WCAG 2.1 checklist
+* Conduct screen reader testing (VoiceOver / NVDA)
+* Verify color contrast compliance
+* Validate heading structure and semantic labeling
+
+3. Storyboard Link
+Our storyboard images (with ALT text included in the README) are available here:
+
+
+Each storyboard includes at least three panels (entry, interaction, and exit) showing the complete user experience for each task.
+
+4. Timeline
+Week 9 – Functional Prototype
+Goal: Working system with core functionality
+Sahana:
+* Design transcript display UI
+* Implement timestamp navigation
+* Add editing functionality
+* Add accessibility features (keyboard navigation, contrast, text resizing)
+Mahima:
+* Implement real-time transcription
+* Integrate speech-to-text API
+* Ensure live captioning works
+Deliverable: End-to-end record, save, edit workflow
+
+Week 10 – Validation Phase
+Sahana:
+* Conduct WCAG accessibility audit
+* Test keyboard-only navigation
+* Perform screen reader testing
+* Refine UI based on accessibility findings
+Mahima:
+* Conduct WER analysis
+* Test summary generation accuracy
+* Validate timestamp alignment
+Deliverable: Documented validation results and refined system
+
+Final Presentation Week
+* Live demo ready
+* Poster prepared
+* README complete
+* Storyboards uploaded with ALT text
+
+5. Feasibility Analysis
+Technical Feasibility
+We believe this project is technically feasible within the three-week timeline. We are using existing technologies rather than building new speech recognition systems from scratch.
+Technologies:
+* Speech-to-text API
+* Web-based frontend interface
+* Accessibility testing tools (VoiceOver, WCAG checklist)
+Both team members have experience with frontend development and accessibility evaluation from previous coursework, so we feel confident implementing the interface and testing accessibility features.
+We are focusing more on interface design, correction tools, and structured summaries rather than complex AI model training, which keeps the scope manageable.
+
+Fallback Plan:
+* Use prerecorded audio if real-time processing fails
+* Start with rule-based summary generation before integrating advanced AI models
+
+Timeline Feasibility
+Each team member will commit 6–8 hours per week. We will implement core functionality first, then move to validation and refinement. Weekly check-ins will help us keep the scope realistic and avoid last-minute issues.
+
+Risks & Mitigation
+* Summary quality may depend on transcription accuracy. We mitigate this by allowing users to edit before generating summaries.
+* Accessibility compliance may require iteration. We will test early in Week 10.
+* Scope creep in AI features. We will prioritize essential functionality first.
