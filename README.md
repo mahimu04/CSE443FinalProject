@@ -48,7 +48,7 @@ That said, any technology like this risks oversimplification risks oversimplific
 
 
 
-**List of Tasks We Plan to Support**
+**1. List of Tasks We Plan to Support**
 
 Task 1: Record and Transcribe Lecture
 * User opens the application
@@ -70,7 +70,7 @@ Task 2: Review and Correct Notes
 * User exports notes for later use
 These tasks are informed by our research on speech recognition ambiguity, bias in ASR systems, and interactive error recovery. Instead of just showing AI output, our system allows users to actively review, correct, and structure their notes, which helps reduce ambiguity and improve accessibility.
 
-2. Validation Plan
+**2. Validation Plan**
 We will validate the project through system-based evaluation rather than user studies.
 
 Correctness Analysis
@@ -95,13 +95,13 @@ Accessibility Audit
 * Verify color contrast compliance
 * Validate heading structure and semantic labeling
 
-3. Storyboard Link
+**3. Storyboard Link**
 Our storyboard images (with ALT text included in the README) are available here:
 
 
 Each storyboard includes at least three panels (entry, interaction, and exit) showing the complete user experience for each task.
 
-4. Timeline
+**4. Timeline**
 Week 9 – Functional Prototype
 Goal: Working system with core functionality
 Sahana:
@@ -133,7 +133,7 @@ Final Presentation Week
 * README complete
 * Storyboards uploaded with ALT text
 
-5. Feasibility Analysis
+**5. Feasibility Analysis**
 Technical Feasibility
 We believe this project is technically feasible within the three-week timeline. We are using existing technologies rather than building new speech recognition systems from scratch.
 Technologies:
@@ -143,14 +143,14 @@ Technologies:
 Both team members have experience with frontend development and accessibility evaluation from previous coursework, so we feel confident implementing the interface and testing accessibility features.
 We are focusing more on interface design, correction tools, and structured summaries rather than complex AI model training, which keeps the scope manageable.
 
-Fallback Plan:
+**Fallback Plan:**
 * Use prerecorded audio if real-time processing fails
 * Start with rule-based summary generation before integrating advanced AI models
 
-Timeline Feasibility
+**Timeline Feasibility**
 Each team member will commit 6–8 hours per week. We will implement core functionality first, then move to validation and refinement. Weekly check-ins will help us keep the scope realistic and avoid last-minute issues.
 
-Risks & Mitigation
+**Risks & Mitigation**
 * Summary quality may depend on transcription accuracy. We mitigate this by allowing users to edit before generating summaries.
 * Accessibility compliance may require iteration. We will test early in Week 10.
 * Scope creep in AI features. We will prioritize essential functionality first.
