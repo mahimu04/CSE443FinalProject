@@ -53,6 +53,14 @@ Accessibility Audit
 **3. Storyboard Link**
 Our storyboard images (with ALT text included in the README) are available here:
 
+For Task 1:
+![FullSizeRender](https://github.com/user-attachments/assets/22b65164-ae0e-4074-a201-0c6228bd1425)
+ALT: A hand-drawn four-panel storyboard 
+Panel 1 shows a a student walking into lecture and opening the speech to text app. 
+Panel 2 shows the app live transcribing the lecture as the professor lectures.
+Panel 3 shows the app automatically assigning the transcribed notes into groups, specifically a "History of tech", "formulas" and "papers: group. There is also a save notes button. 
+Panel 4: shows the notes being saved, and the student with a happy face. It also states that the student can reference and edit the notes later. 
+
 ![FullSizeRender](https://github.com/user-attachments/assets/22b65164-ae0e-4074-a201-0c6228bd1425)
 ALT: A hand-drawn three-panel storyboard titled “Task 2 – Review & Correct Notes.” 
 Panel 1 shows a saved lecture transcript labeled “Saved lecture – CSE 443” with timestamped entries such as “00:01 Professor: Today we discussed accessibility models.” 
