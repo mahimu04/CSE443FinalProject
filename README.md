@@ -44,4 +44,4 @@ Does It Oversimplify Disability or Identity?
 
 We want to avoid oversimplification by recognizing the true range accessibility needs and offering customizable interaction modes. It does not assume a single disability type or uniform solution.
 
-That said, any generalized assistive system risks oversimplification, just due to different existing models inadequacies. Improvements would require engagement with diverse disability communities to ensure accurate representations of real-world experiences.
+That said, any technology like this risks oversimplification risks oversimplification, just due to different existing models inadequacies. Improvements would require engagement with diverse disability communities to ensure accurate representations of real-world experiences.
