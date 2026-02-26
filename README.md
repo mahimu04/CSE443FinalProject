@@ -47,7 +47,9 @@ We want to avoid oversimplification by recognizing the true range accessibility 
 That said, any technology like this risks oversimplification risks oversimplification, just due to different existing models inadequacies. Improvements would require engagement with diverse disability communities to ensure accurate representations of real-world experiences.
 
 
-1. List of Tasks We Plan to Support
+
+**List of Tasks We Plan to Support**
+
 Task 1: Record and Transcribe Lecture
 * User opens the application
 * Selects “Start Recording”
