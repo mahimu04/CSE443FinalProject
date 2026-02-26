@@ -71,6 +71,7 @@ Task 2: Review and Correct Notes
 These tasks are informed by our research on speech recognition ambiguity, bias in ASR systems, and interactive error recovery. Instead of just showing AI output, our system allows users to actively review, correct, and structure their notes, which helps reduce ambiguity and improve accessibility.
 
 **2. Validation Plan**
+
 We will validate the project through system-based evaluation rather than user studies.
 
 Correctness Analysis
@@ -97,6 +98,11 @@ Accessibility Audit
 
 **3. Storyboard Link**
 Our storyboard images (with ALT text included in the README) are available here:
+![FullSizeRender](https://github.com/user-attachments/assets/22b65164-ae0e-4074-a201-0c6228bd1425)
+ALT: A hand-drawn three-panel storyboard titled “Task 2 – Review & Correct Notes.” 
+Panel 1 shows a saved lecture transcript labeled “Saved lecture – CSE 443” with timestamped entries such as “00:01 Professor: Today we discussed accessibility models.” 
+Panel 2 shows the user navigating by timestamps and editing an incorrect word in the transcript, with an “edited” label at the top. 
+Panel 3 shows the user highlighting important text and pressing a “Generate” button to create a structured summary. Each panel includes simple navigation buttons at the bottom, and handwritten captions explain the steps of opening a saved session, editing transcript errors, and generating a summary.
 
 
 Each storyboard includes at least three panels (entry, interaction, and exit) showing the complete user experience for each task.
