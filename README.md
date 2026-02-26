@@ -54,7 +54,7 @@ Accessibility Audit
 Our storyboard images (with ALT text included in the README) are available here:
 
 For Task 1:
-![FullSizeRender](https://github.com/user-attachments/assets/22b65164-ae0e-4074-a201-0c6228bd1425)
+![FullSizeRender]((https://github.com/mahimu04/CSE443FinalProject/blob/main/IMG_7738.jpeg))
 ALT: A hand-drawn four-panel storyboard 
 Panel 1 shows a a student walking into lecture and opening the speech to text app. 
 Panel 2 shows the app live transcribing the lecture as the professor lectures.
