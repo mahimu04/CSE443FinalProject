@@ -134,7 +134,7 @@ Accessibility validation will include:
 
 ## Task 1: Review and Repair Transcript
 
-![Transcript Repair Storyboard](https://github.com/user-attachments/assets/40ac2235-c6e3-41d7-8a38-49e759fdd59b)
+![IMG_7776](https://github.com/user-attachments/assets/4ccef121-0940-4207-9f3d-2a6fcecf510a)
 
 ALT: Three-panel storyboard titled "Task 1: Review and Repair Transcript".  
 Panel 1 shows a lecture transcript with timestamps and highlighted low-confidence text.  
