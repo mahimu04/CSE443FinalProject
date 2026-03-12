@@ -30,6 +30,72 @@ const NOTE_FORMATS = [
   { id: "custom",     label: "✏️ Custom" },
 ];
 
+// ── Export builders per format ─────────────────────────────────
+function buildExportText(noteFormat, data) {
+  const { keyConcepts, definitions, examples, questions, actionItems, summary, allAnnotations } = data;
+
+  const fmt = (label, items, mapper) =>
+    items.length ? `\n── ${label} ──\n${items.map(mapper).join("\n")}` : "";
+
+  const entryLine = (e) => `  - [${e.timestamp}] ${e.text}`;
+  const annotLine = (n) => `  - [${n.timestamp}] "${n.word}": ${n.note}`;
+
+  switch (noteFormat) {
+    case "structured":
+      return [
+        `=== STRUCTURED OUTLINE ===\n`,
+        `SUMMARY:\n${summary}`,
+        fmt("KEY CONCEPTS", keyConcepts, entryLine),
+        fmt("DEFINITIONS", definitions, entryLine),
+        fmt("EXAMPLES", examples, entryLine),
+        fmt("ANNOTATIONS", allAnnotations, annotLine),
+      ].filter(Boolean).join("\n");
+
+    case "cornell":
+      return [
+        `=== CORNELL NOTES ===\n`,
+        `┌─ CUES / QUESTIONS ─────────────────────────────┐`,
+        fmt("Key Concepts", keyConcepts, entryLine),
+        fmt("Questions", questions, (e) => `  - [${e.timestamp}] ❓ ${e.text}`),
+        `├─ NOTES ────────────────────────────────────────┤`,
+        fmt("Definitions", definitions, (e) => `  - [${e.timestamp}] DEF: ${e.text}`),
+        fmt("Examples", examples, (e) => `  - [${e.timestamp}] Ex: ${e.text}`),
+        `└─ SUMMARY ──────────────────────────────────────┘`,
+        `  ${summary}`,
+      ].filter(Boolean).join("\n");
+
+    case "mednotes":
+      return [
+        `=== MEDICAL / TECHNICAL NOTES ===\n`,
+        fmt("CORE CONCEPTS", keyConcepts, entryLine),
+        fmt("DEFINITIONS & MECHANISMS", definitions, entryLine),
+        fmt("CLINICAL / APPLIED EXAMPLES", examples, entryLine),
+        fmt("FOLLOW-UP QUESTIONS", questions, entryLine),
+        fmt("ACTION ITEMS", actionItems, entryLine),
+      ].filter(Boolean).join("\n");
+
+    case "todos":
+      return [
+        `=== TO-DO NOTES ===\n`,
+        fmt("ACTION ITEMS", actionItems, (e) => `  [ ] [${e.timestamp}] ${e.text}`),
+        fmt("QUESTIONS TO FOLLOW UP", questions, (e) => `  [ ] [${e.timestamp}] ❓ ${e.text}`),
+        fmt("CONCEPTS TO REVIEW", keyConcepts, (e) => `  [ ] [${e.timestamp}] ${e.text}`),
+      ].filter(Boolean).join("\n");
+
+    case "custom":
+    default:
+      return [
+        `=== CUSTOM NOTES ===\n`,
+        fmt("KEY CONCEPTS", keyConcepts, entryLine),
+        fmt("DEFINITIONS", definitions, entryLine),
+        fmt("EXAMPLES", examples, entryLine),
+        fmt("QUESTIONS", questions, entryLine),
+        fmt("ACTION ITEMS", actionItems, entryLine),
+        fmt("ANNOTATIONS", allAnnotations, annotLine),
+      ].filter(Boolean).join("\n");
+  }
+}
+
 // ── Structured Outline ─────────────────────────────────────────
 function StructuredOutline({ data, fontSize }) {
   const { keyConcepts, definitions, examples, summary, allAnnotations } = data;
@@ -86,7 +152,6 @@ function CornellNotes({ data, fontSize }) {
         <p className="cornell-hint">Cue column (left) — Notes column (right) — Summary (bottom)</p>
       </div>
       <div className="cornell-body">
-        {/* Cue column: key concepts & questions */}
         <div className="cornell-cue" role="region" aria-label="Cue column — key concepts and questions">
           <div className="cornell-col-label">Cues / Questions</div>
           {keyConcepts.length === 0 && questions.length === 0
@@ -106,7 +171,6 @@ function CornellNotes({ data, fontSize }) {
                 ))}
               </>}
         </div>
-        {/* Notes column: definitions + examples */}
         <div className="cornell-notes-col" role="region" aria-label="Notes column — definitions and examples">
           <div className="cornell-col-label">Notes</div>
           {definitions.length === 0 && examples.length === 0
@@ -127,7 +191,6 @@ function CornellNotes({ data, fontSize }) {
               </>}
         </div>
       </div>
-      {/* Summary row */}
       <div className="cornell-summary" role="region" aria-label="Summary row">
         <div className="cornell-col-label">Summary</div>
         <p>{summary}</p>
@@ -311,27 +374,14 @@ function CustomNotes({ data, fontSize }) {
 // ── Main StudyMode component ───────────────────────────────────
 export default function StudyMode({ transcript }) {
   const [fontSize, setFontSize] = useState(16);
-  const [readingLevel, setReadingLevel] = useState("standard");
   const [noteFormat, setNoteFormat] = useState("structured");
   const [exported, setExported] = useState(false);
 
   const data = buildOutline(transcript);
 
   const handleExport = () => {
-    const { keyConcepts, definitions, examples, questions, actionItems, summary, allAnnotations } = data;
-
-    const lines = [
-      `=== STUDY NOTES — ${noteFormat.toUpperCase()} FORMAT ===\n`,
-      `SUMMARY:\n${summary}\n`,
-      keyConcepts.length  ? `\nKEY CONCEPTS:\n${keyConcepts.map((e) => `- [${e.timestamp}] ${e.text}`).join("\n")}` : "",
-      definitions.length  ? `\nDEFINITIONS:\n${definitions.map((e) => `- [${e.timestamp}] ${e.text}`).join("\n")}` : "",
-      examples.length     ? `\nEXAMPLES:\n${examples.map((e) => `- [${e.timestamp}] ${e.text}`).join("\n")}` : "",
-      questions.length    ? `\nQUESTIONS:\n${questions.map((e) => `- [${e.timestamp}] ${e.text}`).join("\n")}` : "",
-      actionItems.length  ? `\nACTION ITEMS:\n${actionItems.map((e) => `- [${e.timestamp}] ${e.text}`).join("\n")}` : "",
-      allAnnotations.length ? `\nANNOTATIONS:\n${allAnnotations.map((n) => `- [${n.timestamp}] "${n.word}": ${n.note}`).join("\n")}` : "",
-    ].filter(Boolean).join("\n");
-
-    const blob = new Blob([lines], { type: "text/plain" });
+    const text = buildExportText(noteFormat, data);
+    const blob = new Blob([text], { type: "text/plain" });
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
@@ -357,14 +407,6 @@ export default function StudyMode({ transcript }) {
             aria-valuemin={12} aria-valuemax={28}
             aria-valuenow={fontSize} aria-valuetext={`${fontSize} pixels`}
           />
-        </div>
-        <div className="control-group">
-          <label htmlFor="reading-level" className="control-label">Reading Level</label>
-          <select id="reading-level" value={readingLevel} onChange={(e) => setReadingLevel(e.target.value)}>
-            <option value="simplified">Simplified</option>
-            <option value="standard">Standard</option>
-            <option value="detailed">Detailed</option>
-          </select>
         </div>
         <button className="btn btn-export" onClick={handleExport} aria-label="Export study notes as text file">
           {exported ? "✓ Exported!" : "Export Notes ↓"}
