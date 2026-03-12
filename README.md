@@ -23,7 +23,7 @@ We situate the project in the context of university lecture transcripts, since n
 
 # Tasks and Timeline
 
-## Task 1: Review and Repair Raw AI Transcript
+## Task 1: Review and Repair Raw Transcript
 
 ### Workflow
 
@@ -46,10 +46,6 @@ Example categories include:
 - Definitions
 - Examples
 
-The system distinguishes between:
-
-- Original AI-generated text
-- User edits
 
 ### Accessibility Focus
 
@@ -59,7 +55,7 @@ This task supports accessibility by:
 - Providing a plain-language option to reduce linguistic barriers
 - Supporting ESL learners
 - Supporting students with learning disabilities
-- Allowing multiple representations of information such as outlines, summaries, and bullet points
+- Allowing multiple representations of information, such as outlines, summaries, and bullet points
 
 Goal: Make transcription errors visible and reduce ambiguity in long transcripts while reinforcing that AI-generated text should not be treated as authoritative.
 
@@ -94,7 +90,7 @@ Since we are no longer building a transcription system, our validation focuses o
 
 ## Baseline Analysis
 
-We will first run an existing AI note-taker on prerecorded lecture audio and document:
+We will first run an existing note-taker on prerecorded lecture audio and document:
 
 - transcription errors
 - structural weaknesses
@@ -209,7 +205,6 @@ This scope is feasible because we are not building a speech recognition system. 
 Technologies used include:
 
 - Web-based frontend interface
-- Existing AI note-taking transcripts
 - Accessibility evaluation tools such as VoiceOver and WCAG guidelines
 
 Both team members have experience with frontend development and accessibility evaluation.
@@ -221,7 +216,7 @@ Both team members have experience with frontend development and accessibility ev
 If technical challenges occur:
 
 - Use prerecorded transcripts instead of real-time transcription
-- Use rule-based summaries before integrating advanced AI models
+- Use rule-based summaries before integrating advanced models
 
 ---
 
@@ -278,7 +273,7 @@ Speech technologies often perform worse for non-standard accents, speech impairm
 Our design mitigates this by:
 
 - enabling transcript correction
-- allowing user control over AI output
+- allowing user control 
 - supporting personalization and editing
 
 However, reliance on speech input means the system cannot eliminate all accessibility barriers.
