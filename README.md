@@ -237,32 +237,28 @@ Mitigation: Prioritize core transcript interaction features first
 
 ## Principle 1: Leadership of Those Most Impacted
 
-Accessibility solutions should be guided by people who directly experience disability-related barriers.
+The principle of Leadership of Those Most Impacted states that accessibility solutions should be guided by people who directly experience disability-related barriers, rather than designed solely by non disabled people. Disabled individuals possess lived experience that is extremely valuable. They know about systemic accessibility failures, communication barriers, and accessible strategies that cannot be replicated.
 
-Our project is not led by individuals who identify as disabled users of speech-to-text tools, which creates a limitation. Design decisions may unintentionally reflect assumptions rather than lived experience.
+Our project does not fully meet this principle, because our team members do not personally identify as disabled users of speech-to-text assistive technologies. As a result, there is risk that design decisions may unintentionally reflect assumptions about user needs rather than lived realities.
 
-To partially address this limitation, we:
+However, we attempt to mitigate this limitation through practices learned in class:
+- incorporating first-person accounts from Deaf, hard-of-hearing, and neurodivergent users discussing note-taking barriers
+- analyzing accessibility critiques of existing captioning and transcription systems,
+- grounding feature decisions (editable transcripts, customizable summaries, multilingual support) in documented accessibility needs rather than convenience-driven design.
 
-- studied first-person accounts from Deaf and hard-of-hearing users
-- analyzed critiques of captioning and transcription systems
-- grounded design decisions in documented accessibility needs
-
-However, these steps do not replace participatory design with disabled stakeholders.
+While these steps are some improvement, they of course do not replace direct leadership by disabled users. 
 
 ---
 
 ## Principle 2: Intersectionality
 
-Intersectionality recognizes that disability intersects with identities such as language background, race, socioeconomic status, and education.
+Intersectionality recognizes that individuals hold multiple, overlapping social identities such as race, class, language background, immigration status, and socioeconomic status, and that these identities interact to shape how people experience oppression and access. In the context of disability justice, this means that a disabled person's experience is never shaped by disability alone. Compounding forms of marginalization can make inaccessibility significantly more harmful for some users than others.
 
-Our design addresses intersectionality by:
+Our project relates to this principle in both promising and incomplete ways. Our tool's multilingual support acknowledges that many users who rely on transcription tools are not native English speakers. A Deaf or hard-of-hearing student who is also an international student faces compounded barriers: they must navigate inaccessible audio content in a second language, often in academic environments that already underserve them. By supporting multiple languages and customizable note formats, we attempt to reduce the burden on users navigating both disability-related and language-related barriers simultaneously.
 
-- supporting multiple spoken languages
-- allowing interaction without fine motor precision
-- providing visual, textual, and editable outputs
-- allowing customizable summaries to reduce cognitive load
+However, our design falls short of a fully intersectional approach in important ways. The tool assumes access to reliable technology and stable internet, which disadvantages users from low-income backgrounds or under-resourced institutions. Research has also documented that Black and Latino students are less likely to receive formal disability accommodations in higher education, not because they have fewer disabilities, but because they face greater institutional skepticism, longer wait times for evaluation, and less access to advocacy resources. A neurodivergent student of color may benefit from our tool's features, but without official accommodations granted by their institution, they are accessing it without the broader support structure that makes those accommodations meaningful. Our tool addresses one layer of the barrier but cannot address the structural inequities surrounding it.
 
-These features support users who may experience multiple accessibility barriers simultaneously.
+A genuinely intersectional approach would require involving users with these compounding identities in the design process itself, which connects directly back to the Leadership of Those Most Impacted principle.
 
 ---
 
